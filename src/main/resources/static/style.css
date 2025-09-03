@@ -1,0 +1,151 @@
+body {
+    background: #0f172a;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+h1 { text-align: center; color: #38bdf8; }
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* TASK BOX */
+.task-box {
+    position: relative; /* for delete button positioning */
+    background: #1e293b; /* dark theme original */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+}
+.task-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px rgba(56,189,248,0.4);
+}
+.task-box .date { font-size: 0.9em; color: #94a3b8; margin: 0; }
+.task-box .title { font-size: 1.4em; margin: 5px 0; color: #38bdf8; }
+.task-box .desc { font-size: 1em; margin: 5px 0; color: #e2e8f0; }
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.status:contains("COMPLETED") { background: #22c55e; color: white; }
+.status:contains("PENDING") { background: #f59e0b; color: white; }
+
+/* REGISTER CARD CENTER */
+.register-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+.register-card {
+    width: 380px;
+    padding: 30px;
+    background: #1e293b;
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.register-card h1 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+.register-card label {
+    display: block;
+    text-align: left;
+    margin-top: 12px;
+    color: #e2e8f0;
+    font-size: 0.95em;
+}
+.register-card input, 
+.register-card textarea,
+.register-card select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #334155;
+    color: #f1f5f9;
+    font-size: 0.95em;
+}
+.register-card input:focus,
+.register-card textarea:focus,
+.register-card select:focus {
+    outline: 2px solid #38bdf8;
+}
+.button.full-width {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Delete Button 
+.delete-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    color: #e74c3c;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+.delete-btn:hover {
+    color: #ff6b6b;
+}*/
+/* Delete button theme box */
+.delete-btn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background: #334155; /* dark theme tone */
+    color: #38bdf8;      /* theme blue text */
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.delete-btn:hover {
+    background: #38bdf8;
+    color: #0f172a; /* invert for hover */
+}
+
